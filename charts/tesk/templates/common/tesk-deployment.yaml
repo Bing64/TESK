@@ -90,6 +90,8 @@ spec:
         volumeMounts:
           - name: service-info-config
             mountPath: /etc/tesk/service-info
+          - name: bioos-storage-pvc
+            mountPath: /transfer
 
         ports:
         - containerPort: {{ .Values.tesk.port }}
@@ -97,3 +99,6 @@ spec:
         - name: service-info-config
           configMap:
             name: service-info-config
+        - name: bioos-storage-pvc
+          persistentVolumeClaim:
+            claimName: bioos-storage-pvc

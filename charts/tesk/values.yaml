@@ -34,13 +34,13 @@ tesk:
 transfer:
     # If you want local file systems support (i.e. 'file:' urls in inputs and outputs),
     # you have to define these 2 properties.
-    active: false
+    active: true
 
     # wes_base_path: '/data'      # WesElixir via docker-compose
-    wes_base_path: '/tmp'         # WesElixir locally
+    wes_base_path: '/nfs/bioos-storage'         # WesElixir locally
                                   # Change the value of $wesBasePath in minikubeStart accordingly
     tes_base_path: '/transfer'
-    pvc_name: 'transfer-pvc'
+    pvc_name: 'bioos-storage-pvc'
 
 auth:
     # the following variables are specific to each deployment
