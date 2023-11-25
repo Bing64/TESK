@@ -14,7 +14,7 @@ clusterType: kubernetes
 storage: none
 
 # Configurable storage class. 
-storageClass: 
+storageClass: nfs-csi
 
 tesk:
     # if empty - default base path; currently /ga4gh/tes/v1
@@ -24,10 +24,10 @@ tesk:
     image: docker.io/elixircloud/tesk-api:1.1.0
     port: 8080
     taskmaster_image_name:  docker.io/elixircloud/tesk-core-taskmaster
-    taskmaster_image_version: v0.10.0
+    taskmaster_image_version: v0.10.1
     taskmaster_filer_image_name: docker.io/elixircloud/tesk-core-filer
-    taskmaster_filer_image_version: v0.10.0
-    debug: false
+    taskmaster_filer_image_version: v0.10.1
+    debug: true
     executor_retries: 2
     filer_retries: 2
 
@@ -57,12 +57,12 @@ service:
     # - LoadBalancer for cloud provider (gcloud) or empty otherwise
     # type: NodePort
     # node_port: 31567
-    type: ""
-    node_port: ""
+    type: "NodePort"
+    node_port: "31567"
 
 ftp:
     # If you need FTP configuration, choose one of the 2 methods of providing credentials
-    classic_ftp_secret: ftp-secret
+    classic_ftp_secret: none
     netrc_secret:
     #classic_ftp_secret:
     #netrc_secret: netrc-secret
