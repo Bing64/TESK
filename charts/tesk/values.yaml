@@ -25,7 +25,7 @@ tesk:
     port: 8080
     taskmaster_image_name:  docker.io/elixircloud/tesk-core-taskmaster
     taskmaster_image_version: v0.10.1
-    taskmaster_filer_image_name: docker.io/elixircloud/tesk-core-filer
+    taskmaster_filer_image_name: tesk-core-filer-hiplot
     taskmaster_filer_image_version: v0.10.1
     debug: true
     executor_retries: 2
